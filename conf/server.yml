@@ -1,0 +1,6 @@
+host: 192.168.4.111
+port: 9998
+interval: 5
+leastAgent: 3
+jobModulePath: 'D:/eclipse-workspace/j2ee/bonree_ants_manager/job_module/'
+cmdModulePath: 'D:/eclipse-workspace/j2ee/bonree_ants_manager/cmd_module/'

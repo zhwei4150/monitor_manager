@@ -1,0 +1,23 @@
+name: test
+cmdConfigClass: a.b.d.c.d
+cmdConfig: |
+  a: a
+  b: b
+agentNodes: a,b,c,d
+commands:
+  -
+    name: start
+    exec: a.b.c.d
+    type: local
+  -
+    name: stop
+    exec: a.b.c.d
+    type: local
+  -
+    name: restart
+    exec: a.b.c.d
+    type: local
+  -
+    name: create
+    exec: a.b.c.d
+    type: remote

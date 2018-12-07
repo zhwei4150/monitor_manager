@@ -1,0 +1,31 @@
+name: test
+agentNodes: random
+collectionType: timed
+launcherFactory: standard
+collectionConfigClass: java.util.Map
+collectionExecClass: com.bonree.ants.manager.agent.job.example.SampleMapCollection
+collectionConfig: |
+  name: wz
+  age: 25
+dataStorages: 
+  -
+    storageType: queue
+    storageConfigClass: java.util.Map
+    storageExecClass: com.bonree.ants.manager.agent.job.example.KafkaDataStorage
+    storageConfig: |
+      topic: ants_monitor_wz_test1
+      prop.bootstrap.servers: 192.168.101.86:9092
+      prop.key.serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      prop.serializer.class: kafka.serializer.StringEncoder
+      prop.value.serializer: org.apache.kafka.common.serialization.StringSerializer
+      prop.request.required.acks: 1
+      prop.group.id: group_wz1
+      prop.key.deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
+      prop.value.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  -
+    storageType: common
+    storageConfigClass: java.util.Map
+    storageExecClass: com.bonree.ants.manager.agent.job.example.SampleMapStorage
+    storageConfig: |
+      name: wz
+      age: 25
